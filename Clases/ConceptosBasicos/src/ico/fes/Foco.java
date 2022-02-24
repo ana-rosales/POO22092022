@@ -9,6 +9,7 @@ package ico.fes;
  * @author Jibda
  */
 public class Foco {
+    //atributos encapsulados
     private String color;
     private String tipo;
     private int tamano;
@@ -24,6 +25,7 @@ public class Foco {
         this.tamano = tamano;
     }
 
+    //getters and setters
     public int getTamano() {
         return tamano;
     }
@@ -48,6 +50,12 @@ public class Foco {
         this.tipo = tipo;
     }
     
+    //si no es generado generar con string builder
+    //devuelve en cadena los atributos del objeto
+    @Override
+    public String toString() {
+        return "Foco{" + "color=" + color + ", tipo=" + tipo + ", tamano=" + tamano + '}';
+    }
     
     
 }
