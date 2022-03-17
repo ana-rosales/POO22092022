@@ -17,18 +17,22 @@ public class Computadora {
     private String marca;
     private String modelo;
     private Monitor pantalla;
-    private Mouse ratón;
+    private Mouse raton;
     private Teclado teclado;
     private Procesador cpu;
 
     public Computadora() {
+        pantalla = new Monitor();
+        raton = new Mouse();
+        teclado = new Teclado();
+        cpu = new Procesador();
     }
 
-    public Computadora(String marca, String modelo, Monitor pantalla, Mouse ratón, Teclado teclado, Procesador cpu) {
+    public Computadora(String marca, String modelo, Monitor pantalla, Mouse raton, Teclado teclado, Procesador cpu) {
         this.marca = marca;
         this.modelo = modelo;
         this.pantalla = pantalla;
-        this.ratón = ratón;
+        this.raton = raton;
         this.teclado = teclado;
         this.cpu = cpu;
     }
@@ -65,12 +69,12 @@ public class Computadora {
         this.pantalla = pantalla;
     }
 
-    public Mouse getRatón() {
-        return ratón;
+    public Mouse getRaton() {
+        return raton;
     }
 
-    public void setRatón(Mouse ratón) {
-        this.ratón = ratón;
+    public void setRaton(Mouse raton) {
+        this.raton = raton;
     }
 
     public Teclado getTeclado() {
@@ -83,7 +87,11 @@ public class Computadora {
 
     @Override
     public String toString() {
-        return "Computadora{" + "marca=" + marca + ", modelo=" + modelo + ", pantalla=" + pantalla + ", rat\u00f3n=" + ratón + ", teclado=" + teclado + ", cpu=" + cpu + '}';
+        return "Computadora{" + "marca=" + marca + ", modelo=" + modelo + ", pantalla=" + pantalla + ", rat\u00f3n=" + raton + ", teclado=" + teclado + ", cpu=" + cpu + '}';
+        /*String estado = "Marca: " + this.marca + "\n";
+        estado = estado + "Modelo: " + this.modelo + "\n";
+        estado = estado + "Ratón: Marca: " + this.raton.getMarca() + ", tipo: " + this.raton.getTipo() + "\n";
+        return estado;*/
     }
-    
+                                                                                                                               
 }
