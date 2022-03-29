@@ -42,7 +42,7 @@ public class Persona {
     }
 
     public void dormir(){
-        System.out.println( this.nombre + " está durmiendo..." );
+        System.out.println( this.nombre + " está durmiendo . . ." );
     }
     
 }
