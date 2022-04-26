@@ -5,6 +5,7 @@
 package javabasico2209;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -68,6 +69,7 @@ public class JavaBasico2209 {
         System.out.println(resultado);
         
         // Acá haré el mismo algoritmo pero con operador ternario
+        // <cond>? <Sección caso True> : <Sección caso False>
         
         int edad4 = 30;
         String res = "";
@@ -99,8 +101,8 @@ public class JavaBasico2209 {
         ---------------------
                 0000...0011 => 3
         */
-        int val3 = 1; // 0000...0001
-        // int val4 << val3;
+        int val3 = 1; // 0000...0001  0000...0100
+        // int val4 <<= val3;
         // System.out.println( val3 <<= );
         int val4 = 0;
         val4 = val3 << 2; // El segundo valor es el número 
@@ -155,9 +157,17 @@ public class JavaBasico2209 {
         
         //fori + tab
         for (int i = 0; i < lista.length; i++) {
-            Alumno alumno = lista[i];
-            System.out.println(alumno.evaluarDesempenio());
+            Alumno tmp = lista[i];
+            System.out.println( tmp.evaluarDesempenio() );
+            tmp.estudiar(30);
         }
+        
+        System.out.println("+d-.-.-.-.-.-.");
+        for (int i = 0; i < lista.length; i++) {
+            System.out.println( lista[i].evaluarDesempenio() );
+        }
+        System.out.println("ñlñlñlñlñlñlñl");
+        
         /*
         For each es un FOR especial, introducido en la
         versión 2 de java, esa versión fue la que sufrió
@@ -170,6 +180,52 @@ public class JavaBasico2209 {
         System.out.println("Con for each...");
         for(Alumno alumno : lista){
             System.out.println(alumno.evaluarDesempenio());
+        }
+        
+        ArrayList<Alumno> salchicha= new ArrayList<Alumno>();
+        salchicha.add( new Alumno("99999", 2, 9.0f) );
+        salchicha.add( new Alumno("88888", 2, 8.0f) );
+        salchicha.add( new Alumno("77777", 2, 7.0f) );
+        salchicha.add( new Alumno("66666", 2, 6.0f) );
+        salchicha.add( new Alumno("55555", 2, 5.0f) );
+        
+        for (Alumno alumno : salchicha) {
+            System.out.println( alumno );
+        }
+        
+        System.out.println("Add con índice");
+        salchicha.add( 2, new Alumno("81111", 3, 9.9f) );
+        
+        for (Alumno alumno : salchicha) {
+            System.out.println( alumno );
+        }
+        
+        Alumno tmp = salchicha.get(0);
+        System.out.println("Alumno en index 1: " + tmp);
+        
+        System.out.println("Eliminar el index 3");
+        Alumno tmp2 = salchicha.remove( 3 ); //guarda en variable
+        System.out.println("Elemento sacado = " + tmp2);
+        
+        for (Alumno alumno : salchicha) {
+            System.out.println( alumno );
+        }
+        
+        System.out.println("Reemplazar el i-esimo elemento");
+        Alumno tmp3= salchicha.set(0,new Alumno("44444", 4, 4.0f));
+        System.out.println("El sacado es= " + tmp3);
+        
+        for (Alumno alumno : salchicha) {
+            System.out.println( alumno );
+        }
+        
+        // Excepciones
+        // trycatch + TAB        
+        try {
+            System.out.println("Excepciones");
+            System.out.println( salchicha.get(20) );
+        } catch (Exception e) {
+            System.out.println("Error... revisa los índices");
         }
     }
     
