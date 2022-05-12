@@ -6,6 +6,8 @@ package javabasico2209parte2;
 
 import ico.fes.awt.Ventana;
 import ico.fes.awt.VentanaVersion2;
+import ico.fes.swing.VentanaSwing;
+import javax.sound.midi.SysexMessage;
 
 /**
  *
@@ -14,6 +16,8 @@ import ico.fes.awt.VentanaVersion2;
 public class JavaGraficoMain {
     public static void main(String[] args) {
         //Ventana ventana = new Ventana("Hola AWT ICO FES Aragón");
-        VentanaVersion2 ventana = new VentanaVersion2();
+        //VentanaVersion2 ventana = new VentanaVersion2();
+        VentanaSwing vs = new VentanaSwing();
+        System.out.println(System.getProperty("user.dir"));
     }
 }
