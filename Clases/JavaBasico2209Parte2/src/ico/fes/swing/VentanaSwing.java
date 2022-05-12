@@ -74,7 +74,8 @@ public class VentanaSwing extends JFrame{
                     resultado.setText(gradosFarenheit + " °F");
                 } catch (Exception ex) {
                     System.out.println(ex.toString());
-                    JOptionPane.showMessageDialog(null, "Introduce un valor correcto", "Error de captura", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Introduce un valor correcto",
+                            "Error de captura", JOptionPane.ERROR_MESSAGE);
                 }
             }
         
