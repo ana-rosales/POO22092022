@@ -12,6 +12,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import static vista.LetrasRaras.ENIE_MINUS;
 
@@ -58,20 +59,27 @@ public class Ventana extends JFrame implements LetrasRaras{
                 bytes = texto.getText().getBytes();
                 llave = Integer.parseInt(key.getText());
                 
-                for (byte aByte : bytes) {
-                    int num = aByte;
-                    num += llave;
-                    //Mayúscula
-                    num = (num>=90)? (num%90)+64: num;
-                    //Minúscula
-                    num = (num>=122)? (num%122)+96: num;
-                    
-                    String s = Character.toString(num);
-                    
-                    System.out.println(num);
-                    System.out.println(s);
+                try {
+                    for (byte aByte : bytes) {
+                        int num = aByte;
+                        String tipo = "";
+                        tipo = (num >= 65 && num <= 90) ? "M" : (num >= 97 && num <= 122) ? "m" : "X";
+                        num += llave;
+                        //Mayúscula
+                        num = (num >= 90 && tipo == "M") ? (num % 90) + 64 : num;
+                        //Minúscula
+                        num = (num >= 122 && tipo == "m") ? (num % 122) : num;
+
+                        fin = fin + Character.toString(num);
+
+                        System.out.println(num);
+                        //System.out.println(s);
+                    }
+                    resultado.setText(fin);
+                } catch (NumberFormatException ex) {
+                    System.out.println(ex.toString());
+                    JOptionPane.showMessageDialog(null, "intoduce un valor correcto", "Error de captura ", JOptionPane.ERROR_MESSAGE);
                 }
-                
             }
         });
     }
