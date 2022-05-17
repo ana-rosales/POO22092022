@@ -24,7 +24,7 @@ import javax.swing.JTextField;
  *
  * @author Jibda
  */
-public class VentanaSwing extends JFrame{
+public class VentanaSwing extends JFrame {
     private JTextField cuadro;
     private JButton boton;
     private JLabel resultado;

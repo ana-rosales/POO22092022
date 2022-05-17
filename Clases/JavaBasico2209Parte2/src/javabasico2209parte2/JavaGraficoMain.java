@@ -18,6 +18,7 @@ public class JavaGraficoMain {
         //Ventana ventana = new Ventana("Hola AWT ICO FES Aragón");
         //VentanaVersion2 ventana = new VentanaVersion2();
         VentanaSwing vs = new VentanaSwing();
+        System.out.println(vs);
         System.out.println(System.getProperty("user.dir"));
     }
 }
